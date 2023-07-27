@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Button, Col, Row } from "react-bootstrap";
+import { Card, Button, Col, Row, Pagination } from "react-bootstrap";
 import ModalUpdateToDo from "./components/modal.updateToDo.js";
 import ModalToDo from "./components/modal.todo.js";
 import {
@@ -16,6 +16,25 @@ function TodoApp() {
     getAllToDo(setToDo);
   }, []);
 
+  // Pagination Logic
+  const ITEMS_PER_PAGE = 8;
+  const DISPLAYED_PAGES = 5;
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber - 1);
+  };
+
+  const pageCount = Math.ceil(toDo.length / ITEMS_PER_PAGE);
+  const offset = currentPage * ITEMS_PER_PAGE;
+
+  const firstPage = Math.max(0, currentPage - Math.floor(DISPLAYED_PAGES / 2));
+  const lastPage = Math.min(firstPage + DISPLAYED_PAGES - 1, pageCount - 1);
+  const pages = Array.from(
+    { length: lastPage - firstPage + 1 },
+    (_, index) => firstPage + index
+  );
+
   return (
     <div className="App">
       <div className="container">
@@ -26,7 +45,7 @@ function TodoApp() {
 
         <div className="list" style={{ gap: "10px" }}>
           <Row>
-            {toDo.map((todo) => (
+            {toDo.slice(offset, offset + ITEMS_PER_PAGE).map((todo) => (
               <Col xs={12} md={3} key={todo._id}>
                 <Card
                   border="dark"
@@ -77,6 +96,33 @@ function TodoApp() {
               </Col>
             ))}
           </Row>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "20px",
+            }}
+          >
+            <Pagination>
+              <Pagination.First onClick={() => handlePageChange(1)} />
+              <Pagination.Prev onClick={() => handlePageChange(currentPage)} />
+              {firstPage > 0 && <Pagination.Ellipsis />}
+              {pages.map((page) => (
+                <Pagination.Item
+                  key={page}
+                  active={page === currentPage}
+                  onClick={() => handlePageChange(page + 1)}
+                >
+                  {page + 1}
+                </Pagination.Item>
+              ))}
+              {lastPage < pageCount - 1 && <Pagination.Ellipsis />}
+              <Pagination.Next
+                onClick={() => handlePageChange(currentPage + 2)}
+              />
+              <Pagination.Last onClick={() => handlePageChange(pageCount)} />
+            </Pagination>
+          </div>
         </div>
       </div>
     </div>
