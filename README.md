@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# ToDo App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Frontend repository : https://github.com/JunaidIqbalKK/todo-app-frontend
+Backend repository : https://github.com/JunaidIqbalKK/todo-app-backend
 
-## Available Scripts
+![Screenshot](/tmp/todo-0.png)
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Description](#description)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Documentation](#api-documentation)
+- [Screenshots](#screenshots)
+- [Contact](#contact)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Description
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The ToDo app is a full-stack web application built using the MERN stack (MongoDB, Express.js, React.js, Node.js). It allows users to manage their tasks and to-dos efficiently. The app supports user authentication using JWT, and data validation is handled using Joi, JoiPasswordComplexity and bycrypt for added security.
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- User Registration and Login with JWT authentication
+- Add, Edit, and Delete individual tasks
+- Bulk data import from CSV files from client and server both
+- Styling using react-bootstrap with responsive design
+- Pagination for easy task navigation
+- Floating labels for a more user-friendly experience
 
-### `npm run build`
+## Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Frontend: React.js, React-Bootstrap
+- Backend: Node.js, Express.js, MongoDB
+- User Authentication: JWT, Joi, JoiPasswordComplexity, Bcrypt
+- Data Import: CSV import from client and server sides
+- Other Libraries and Tools: axios, router, csv-parser etc...
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository from GitHub.
+2. Install dependencies using `npm install`.
+3. ...
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Make sure MongoDB is running on your system.
+2. Start the backend server using `npm start`.
+3. Start the frontend development server using `npm start`.
+4. Open your browser and go to `http://localhost:3000`.
+5. Sample user details: `email: junaid03@gmail.com' && 'password: aA@12345678`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## API Documentation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The ToDo app's backend exposes two RESTful APIs:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- `/todo`: Provides endpoints for creating, reading, updating, and deleting tasks.
+- `/user`: Provides endpoints for user registration and login.
 
-## Learn More
+### API Endpoints
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `POST /todo/create`: Create a new task.
+- `GET /todo/read`: Get all tasks.
+- `PUT /todo/update`: Update a task by ID.
+- `DELETE /todo/delete`: Delete a task by ID.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+- `POST /user/signup`: Sign Up a new user.
+- `POST /user/signin`: Sign In an existing user.
+- `PUT /user/update`: Change the existing user password.
+- `DELETE /user/delete`: Delete account of an existing user.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Screenshots
 
-### Analyzing the Bundle Size
+![Screenshot 1](/tmp/todo-2.png)
+![Screenshot 2](/tmp/todo-1.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contact
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For any questions or feedback, feel free to contact me at [junaidiqbalkk@gmail.com](mailto:junaidiqbalkk@gmail.com).
