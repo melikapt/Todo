@@ -3,7 +3,7 @@
 Frontend repository : https://github.com/JunaidIqbalKK/todo-app-frontend
 Backend repository : https://github.com/JunaidIqbalKK/todo-app-backend
 
-![Screenshot](/tmp/todo-0.png)
+![Screenshot](/public/todo-0.png)
 
 ## Table of Contents
 
@@ -74,8 +74,8 @@ The ToDo app's backend exposes two RESTful APIs:
 
 ## Screenshots
 
-![Screenshot 1](/tmp/todo-2.png)
-![Screenshot 2](/tmp/todo-1.png)
+![Screenshot 1](/public/todo-2.png)
+![Screenshot 2](/public/todo-1.png)
 
 ## Contact
 
