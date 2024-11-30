@@ -42,9 +42,11 @@ export default function SignUpModal(props) {
     };
 
     try {
-      const url = "http://localhost:4501/user/signup";
+      // const url = "http://localhost:4501/user/signup";
+      const url = "http://localhost:4000/user/signup";
       const response = await axios.post(url, signUpData);
       console.log(response.data.message);
+      window.alert(response.data.message)
       handleClose();
     } catch (error) {
       if (
