@@ -31,7 +31,7 @@ export default function SignInModal(props) {
       const url = "http://localhost:4000/user/signin";
       const response = await axios.post(url, signInData);
       const { firstName, lastName, email } = response.data.user;
-      const {token} = response.data.token;
+      const token = response.data.token;
       localStorage.setItem("token", token);
       localStorage.setItem("firstName", firstName);
       localStorage.setItem("lastName", lastName);
