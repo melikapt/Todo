@@ -40,6 +40,7 @@ function validate(user) {
         lastName: Joi.string().max(255).required(),
         email: Joi.string().email().required(),
         password: Joi.string().min(8).max(50).required()
+        .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&amp;*()\-_=+}[{'"/:,?]).{8,}$/)
     });
     return schema.validate(user);
 }
