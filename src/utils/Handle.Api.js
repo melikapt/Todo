@@ -96,9 +96,11 @@ const bulkUploadToDo = async (file, onSuccess, onError) => {
     );
     if (onSuccess) {
       onSuccess(response.data);
+      window.alert(response.data);
     }
   } catch (error) {
-    console.error("Error uploading CSV file:", error);
+    console.error(error.response.data.message);
+    window.alert(error.response.data.message);
     if (onError) {
       onError("Failed to upload CSV file");
     }
