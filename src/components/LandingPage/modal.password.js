@@ -53,7 +53,7 @@ export default function PasswordModal(props) {
       newPassword: newPassword,
     };
 
-    const url = "http://localhost:4501/user/update";
+    const url = "http://localhost:4000/user/update";
 
     try {
       const config = getApiConfig();

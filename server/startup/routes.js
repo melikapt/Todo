@@ -9,7 +9,7 @@ module.exports = function name(app) {
     app.use(cors());
     app.use(express.json());
     app.use('/user/signup', user);
-    app.use('/user/signin', signin);
+    app.use('/user', signin);
     app.use('/todo', todos);
     app.use('/todo/bulkUpload', upload);
 }
